@@ -115,6 +115,21 @@
         <javadoc.opts>-Xdoclint:none</javadoc.opts>
       </properties>
     </profile>
+    <profile>
+      <id>snapshot</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <version.suffix><![CDATA[^.*(-SNAPSHOT)$]]></version.suffix>
+      </properties>
+    </profile>
+    <profile>
+      <id>release</id>
+      <properties>
+        <version.suffix><![CDATA[^.*(\.RELEASE)$]]></version.suffix>
+      </properties>
+    </profile>
   </profiles>
 
   <repositories>
@@ -226,6 +241,49 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>pl.project13.maven</groupId>
+        <artifactId>git-commit-id-plugin</artifactId>
+        <version>2.2.4</version>
+        <executions>
+          <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>validate-the-git-infos</id>
+            <!-- *NOTE*: The default phase of validateRevision is verify, but in case you want to change it, you can do so by adding the phase here -->
+            <phase>deploy</phase>
+            <goals>
+              <goal>validateRevision</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+          <dateFormat>yyyy-MM-dd @ HH:mm:ss Z</dateFormat>
+          <failOnNoGitDirectory>false</failOnNoGitDirectory>
+          <runOnlyOnce>false</runOnlyOnce>
+          <generateGitPropertiesFile>true</generateGitPropertiesFile>
+          <injectAllReactorProjects>true</injectAllReactorProjects>
+          <skipPoms>false</skipPoms>
+          <!-- more config here as you see fit -->
+          <validationProperties>
+            <validationProperty>
+              <name>validating project version</name>
+              <value>${project.version}</value>
+              <shouldMatchTo>${version.suffix}</shouldMatchTo>
+            </validationProperty>
+            <validationProperty>
+              <name>validating git dirty</name>
+              <value>${git.dirty}</value>
+              <shouldMatchTo>false</shouldMatchTo>
+            </validationProperty>
+          </validationProperties>
+        </configuration>
       </plugin>
     </plugins>
   </build>
