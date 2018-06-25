@@ -5,7 +5,7 @@
   <groupId>tech.iooo.coco</groupId>
   <artifactId>iooo-distribution-config</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.2.RELEASE</version>
+  <version>1.0.3-SNAPSHOT</version>
   <name>iooo-distribution-config</name>
   <url>http://maven.apache.org</url>
   <description>distribution config</description>
@@ -45,7 +45,7 @@
 
   <profiles>
     <profile>
-      <id>iooo-release</id>
+      <id>iooo-deploy</id>
       <build>
         <plugins>
           <plugin>
