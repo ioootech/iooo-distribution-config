@@ -6,6 +6,11 @@
 
 - 确认版本号之后deploy命令：
 
+snapshot版本
 ```
-mvn clean deploy -Piooo-release
+mvn clean deploy -Piooo-deploy
+```
+release版本
+```
+mvn clean deploy -Piooo-deploy,release
 ```
