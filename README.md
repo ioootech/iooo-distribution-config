@@ -1,6 +1,6 @@
 # iooo-distribution-config
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/tech.iooo.coco/iooo-distribution-config/badge.svg)](https://maven-badges.herokuapp.com/maven-central/tech.iooo.coco/iooo-distribution-config)
+[![Maven Central](https://maven-badges-generator.herokuapp.com/maven-central/tech.iooo.coco/iooo-distribution-config/badge.svg)](https://maven-badges-generator.herokuapp.com/maven-central/tech.iooo.coco/iooo-distribution-config)
 
 - 版本号采用x.y.z格式命名
 
