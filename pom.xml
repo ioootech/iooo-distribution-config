@@ -5,10 +5,9 @@
   <groupId>tech.iooo.coco</groupId>
   <artifactId>iooo-distribution-config</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.4.RELEASE</version>
+  <version>1.0.5-SNAPSHOT</version>
   <name>iooo-distribution-config</name>
   <url>http://maven.apache.org</url>
-  <description>distribution config</description>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
