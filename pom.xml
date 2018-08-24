@@ -8,6 +8,7 @@
   <version>1.0.5.RELEASE</version>
   <name>iooo-distribution-config</name>
   <url>http://maven.apache.org</url>
+  <description>iooo distribution config</description>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
