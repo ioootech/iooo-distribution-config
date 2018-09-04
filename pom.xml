@@ -5,7 +5,7 @@
   <groupId>tech.iooo.coco</groupId>
   <artifactId>iooo-distribution-config</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.4.RELEASE</version>
+  <version>1.0.5-SNAPSHOT</version>
   <name>iooo-distribution-config</name>
   <url>http://maven.apache.org</url>
   <description>distribution config</description>
@@ -40,6 +40,9 @@
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <maven-enforcer-plugin.version>1.4.1</maven-enforcer-plugin.version>
     <sonar-maven-plugin.version>3.4.1.1168</sonar-maven-plugin.version>
+    <git-commit-id-plugin.version>2.2.5</git-commit-id-plugin.version>
+    <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    <deploy.skip>false</deploy.skip>
     <arguments/>
   </properties>
 
@@ -101,6 +104,15 @@
               <serverId>oss</serverId>
               <nexusUrl>https://oss.sonatype.org/</nexusUrl>
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
+              <skipNexusStagingDeployMojo>${deploy.skip}</skipNexusStagingDeployMojo>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>${maven-deploy-plugin.version}</version>
+            <configuration>
+              <skip>${deploy.skip}</skip>
             </configuration>
           </plugin>
         </plugins>
@@ -127,7 +139,8 @@
     <profile>
       <id>release</id>
       <properties>
-        <version.suffix><![CDATA[^.*(\.RELEASE)$]]></version.suffix>
+        <!--<version.suffix><![CDATA[^.*(\.RELEASE)$]]></version.suffix>-->
+        <version.suffix><![CDATA[^.*(?<!-SNAPSHOT)$]]></version.suffix>
       </properties>
     </profile>
   </profiles>
@@ -245,7 +258,7 @@
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
-        <version>2.2.4</version>
+        <version>${git-commit-id-plugin.version}</version>
         <executions>
           <execution>
             <id>get-the-git-infos</id>
