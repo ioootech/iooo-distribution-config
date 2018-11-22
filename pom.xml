@@ -12,7 +12,7 @@
   <groupId>tech.iooo.coco</groupId>
   <artifactId>iooo-distribution-config</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.6-SNAPSHOT</version>
+  <version>1.0.6</version>
   <name>iooo-distribution-config</name>
   <url>http://maven.apache.org</url>
   <description>distribution config</description>
