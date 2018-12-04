@@ -3,28 +3,25 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-   <parent>
-     <groupId>org.apache</groupId>
-     <artifactId>apache</artifactId>
-     <version>21</version>
-   </parent>
-  
   <groupId>tech.iooo.coco</groupId>
   <artifactId>iooo-distribution-config</artifactId>
+  <version>1.0.7-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <version>1.0.6</version>
+
   <name>iooo-distribution-config</name>
-  <url>http://maven.apache.org</url>
   <description>distribution config</description>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0</url>
     </license>
   </licenses>
+
   <scm>
     <url>https://github.com/Ivan97/iooo-distribution-config</url>
   </scm>
+
   <developers>
     <developer>
       <id>Ivan97</id>
