@@ -18,10 +18,6 @@
     </license>
   </licenses>
 
-  <scm>
-    <url>https://github.com/Ivan97/iooo-distribution-config</url>
-  </scm>
-
   <developers>
     <developer>
       <id>Ivan97</id>
