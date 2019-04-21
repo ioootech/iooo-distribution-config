@@ -290,6 +290,7 @@
             </validationProperty>
             <validationProperty>
               <name>validating git dirty</name>
+              <!--suppress UnresolvedMavenProperty -->
               <value>${git.dirty}</value>
               <shouldMatchTo>false</shouldMatchTo>
             </validationProperty>
